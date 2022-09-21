@@ -1,0 +1,13 @@
+name: 'Install TensorFlow'
+description: 'Install TensorFlow C libraries'
+
+inputs:
+  version:
+    description: 'The release version of TensorFlow to install'
+    required: false
+
+runs:
+  using: composite
+  steps:
+    - run: ${{ github.action_path }}/install.sh ${{ inputs.version }}
+      shell: bash
